@@ -1,22 +1,21 @@
 import React from 'react'
-import AddTodo from './AddTodo'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-class App extends React.Component {
-  componentDidMount() {
-  }
+import Nav from './Nav'
+import Register from './Register'
+import SignIn from './SignIn'
 
-  render() {
-    return (
-      <>
-        <header className="header">
-          <h1>todos</h1>
-          <AddTodo/>
-        </header>
-        <section className="main"></section>
-        <footer className="footer"></footer>
-      </>
-    )
-  }
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route path='/register' component={Register} />
+        <Route path='/signin' component={SignIn} />
+        <Route exact path='/' component={Nav} />
+        <Route render={() => <h1>You Have Come to the Wrong Place </h1>}/>
+      </Switch>
+    </Router>
+  )
 }
 
 export default App

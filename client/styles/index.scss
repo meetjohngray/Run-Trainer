@@ -66,9 +66,9 @@ body {
   color: rgba(0, 0, 0, 0.4);
 }
 
-.todoapp h1 {
+.header h1 {
   position: absolute;
-  top: -140px;
+  top: -165px;
   width: 100%;
   font-size: 80px;
   font-weight: 200;
@@ -78,6 +78,32 @@ body {
   -moz-text-rendering: optimizeLegibility;
   text-rendering: optimizeLegibility;
 }
+
+.navbar {
+  position: absolute;
+  top: -50px;
+  padding: 10px 15px;
+  height: 20px;
+  text-align: center;
+  font-size: 15px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.navbar ul {
+  padding-inline-start: 0;
+}
+
+// .navbar:after {
+//   content: "";
+//   position: absolute;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   height: 50px;
+//   overflow: hidden;
+//   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2),
+//     0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+// }
 
 .new-todo,
 .edit {
@@ -103,6 +129,26 @@ body {
   background: rgba(0, 0, 0, 0.003);
   box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
 }
+
+.edit-todo {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: inherit;
+  // line-height: 1.4em;
+  color: inherit;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+}
+
+// input[type="text" i] {
+//   padding: none;
+// }
 
 .main {
   position: relative;
@@ -170,9 +216,10 @@ body {
   margin: 0 0 0 43px;
 }
 
-.todo-list li.editing .view {
-  display: none;
-}
+// Why is this rule here??
+// .todo-list li.editing .view {
+//   display: none;
+// }
 
 .todo-list li .toggle {
   text-align: center;

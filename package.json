@@ -10,7 +10,9 @@
     "watch:server": "nodemon --watch server",
     "start": "node server",
     "test": "jest --noStackTrace --watchAll",
-    "build": "webpack"
+    "build": "webpack",
+    "knex": "knex --knexfile ./server/db/knexfile.js",
+    "lint": "eslint --ext .js,.jsx ."
   },
   "author": "EDA",
   "license": "ISC",
@@ -21,25 +23,34 @@
     ],
     "plugins": [
       "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-object-rest-spread"
+      "@babel/plugin-proposal-object-rest-spread",
+      [
+        "@babel/plugin-transform-runtime",
+        {
+          "regenerator": true
+        }
+      ]
     ]
   },
-  "jest": {
-    "setupFiles": [
-      "./tests/client/setup-enzyme.js"
+  "eslintConfig": {
+    "extends": "eda",
+    "ignorePatterns": [
+      "bundle.js"
     ]
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.2.1",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.3",
+    "eslint": "^7.14.0",
+    "eslint-config-eda": "^0.1.4",
     "jest": "^26.4.1",
+    "nock": "^13.0.5",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -47,15 +58,18 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "sqlite3": "^5.0.0",
     "sass": "^1.26.10",
     "sass-loader": "^9.0.3",
+    "sqlite3": "^5.0.0",
     "style-loader": "^1.2.1",
     "supertest": "^4.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@testing-library/react": "^11.2.2",
+    "authenticare": "^0.4.7",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "knex": "^0.21.5",
     "mini-css-extract-plugin": "^0.10.0",
