@@ -1,9 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
-import Header from './Header'
-import TaskList from './TaskList'
-import Footer from './Footer'
 import { logOff } from 'authenticare/client'
 
 export default function Nav () {
@@ -20,11 +17,7 @@ export default function Nav () {
           </IfNotAuthenticated>
         </ul>
       </div>
-
-      <Header />
       <IfAuthenticated>
-        <TaskList />
-        <Footer />
       </IfAuthenticated>
     </>
   )

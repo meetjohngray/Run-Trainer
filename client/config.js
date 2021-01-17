@@ -1,3 +1,4 @@
+// TODO: Find out more about what this does, how to use
 const environments = {
   development: 'http://localhost:3000/api/v1',
   test: '',

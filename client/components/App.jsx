@@ -8,6 +8,7 @@ import SignIn from './SignIn'
 const App = () => {
   return (
     <Router>
+      <h1>Hello World</h1>
       <Switch>
         <Route path='/register' component={Register} />
         <Route path='/signin' component={SignIn} />
